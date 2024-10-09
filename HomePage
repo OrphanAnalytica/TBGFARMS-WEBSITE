@@ -17,12 +17,37 @@
         }
         header {
             text-align: center;
-            padding: 100px 20px;
+            padding: 50px 20px;
             background-color: rgba(0, 0, 0, 0.6);
             color: #fff;
         }
         .logo {
             width: 150px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #555;
         }
         .content-section {
             padding: 50px;
@@ -59,6 +84,11 @@
             width: 30px;
             margin: 5px;
         }
+        @media (max-width: 768px) {
+            .service-item {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -67,6 +97,16 @@
         <h1>WELCOME TO TBG FARMS</h1>
         <p>TBG Farms stands at the forefront of agricultural innovation as a mixed livestock enterprise with a heart for social change. Specializing in the breeding and husbandry of pigs and poultry, we provide more than just livestock—we offer a vision for sustainable farming and community empowerment in Liberia.</p>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">OUR STORY</a></li>
+            <li><a href="#">SERVICES</a></li>
+            <li><a href="#">FARMER REGISTRATION</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
 
     <div class="content-section">
         <h2>Our Products and Services</h2>
