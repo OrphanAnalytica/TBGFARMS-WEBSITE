@@ -22,7 +22,6 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            min-height: 100vh;
         }
         header {
             background-color: rgba(255, 255, 255, 0.9);
@@ -57,47 +56,65 @@
             background-color: var(--primary-color);
             color: var(--light-text);
         }
+        .section {
+            padding: 60px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
         .welcome-section {
             text-align: center;
-            padding: 80px 20px;
-            margin: 50px auto;
-            max-width: 800px;
             background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 15px;
+            color: var(--light-text);
+            padding: 100px 0;
         }
         .welcome-section h1 {
             font-size: 3em;
-            color: var(--light-text);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .welcome-section p {
             font-size: 1.2em;
-            color: var(--light-text);
+            max-width: 800px;
+            margin: 0 auto;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            line-height: 1.6;
         }
-        .content-section {
+        .about-section {
             background-color: rgba(255, 255, 255, 0.9);
-            margin: 20px auto;
-            max-width: 1200px;
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
-        .content-section h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 30px;
-        }
-        .services-container {
+        .about-content {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: space-between;
         }
-        .service-item {
-            width: 48%;
+        .about-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .services-section h2 {
+            text-align: center;
+            color: var(--primary-color);
             margin-bottom: 40px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .service-item {
             text-align: center;
             background-color: white;
             padding: 20px;
@@ -123,8 +140,7 @@
             background-color: rgba(51, 51, 51, 0.9);
             color: var(--light-text);
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 40px;
+            padding: 30px 0;
         }
         .footer-content {
             margin: 20px 0;
@@ -152,8 +168,12 @@
             nav ul li {
                 margin: 10px 0;
             }
-            .service-item {
-                width: 100%;
+            .about-content {
+                flex-direction: column;
+            }
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
             }
         }
     </style>
@@ -172,48 +192,62 @@
         </nav>
     </header>
 
-    <div class="welcome-section">
-        <h1>WELCOME TO TBG FARMS</h1>
-        <p>TBG Farms stands at the forefront of agricultural innovation as a mixed livestock enterprise with a heart for social change. Specializing in the breeding and husbandry of pigs and poultry, we provide more than just livestock—we offer a vision for sustainable farming and community empowerment in Liberia.</p>
-    </div>
+    <section class="welcome-section">
+        <div class="container">
+            <h1>WELCOME TO TBG FARMS</h1>
+            <p>TBG Farms stands at the forefront of agricultural innovation as a mixed livestock enterprise with a heart for social change. We offer a vision for sustainable farming and community empowerment in Liberia.</p>
+        </div>
+    </section>
 
-    <div class="content-section">
-        <h2>Our Products and Services</h2>
-        <div class="services-container">
-            <div class="service-item">
-                <img src="https://i.imgur.com/U0LuU3q.png" alt="Our Formulated Feed">
-                <h3>Our Formulated Feed</h3>
+    <section class="about-section section">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>Specializing in the breeding and husbandry of pigs and poultry, TBG Farms is committed to transforming Liberia's agriculture through sustainable practices and innovative solutions. We support smallholder farmers by providing training, resources, and products that enhance productivity and sustainability.</p>
             </div>
-            <div class="service-item">
-                <img src="https://i.imgur.com/acq9F58.png" alt="Premium Piglets">
-                <h3>Premium Piglets</h3>
-            </div>
-            <div class="service-item">
-                <img src="https://i.imgur.com/vYcUWJe.png" alt="Organic Compost Fertilizer">
-                <h3>Organic Compost Fertilizer</h3>
-            </div>
-            <div class="service-item">
-                <img src="https://i.imgur.com/bAktdz9.png" alt="Feed Additives">
-                <h3>Feed Additives</h3>
+            <div class="about-image">
+                <img src="https://i.imgur.com/acq9F58.png" alt="TBG Farms">
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="services-section section">
+        <div class="container">
+            <h2>Our Products and Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="https://i.imgur.com/U0LuU3q.png" alt="Our Formulated Feed">
+                    <h3>Our Formulated Feed</h3>
+                </div>
+                <div class="service-item">
+                    <img src="https://i.imgur.com/acq9F58.png" alt="Premium Piglets">
+                    <h3>Premium Piglets</h3>
+                </div>
+                <div class="service-item">
+                    <img src="https://i.imgur.com/vYcUWJe.png" alt="Organic Compost Fertilizer">
+                    <h3>Organic Compost Fertilizer</h3>
+                </div>
+                <div class="service-item">
+                    <img src="https://i.imgur.com/bAktdz9.png" alt="Feed Additives">
+                    <h3>Feed Additives</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <h3>About TBG FARMS</h3>
-            <p>TBG FARMS is committed to transforming Liberia's agriculture through sustainable practices and innovative solutions. We support smallholder farmers by providing training, resources, and products that enhance productivity and sustainability.</p>
-        </div>
-        <div class="footer-content">
-            <h3>OUR PARTNERS</h3>
-            <img src="https://i.imgur.com/wJt1fy0.jpg" alt="Partners Logos">
-        </div>
-        <div class="footer-content">
-            <h3>Follow Us</h3>
-            <div class="social-links">
-                <a href="#"><img src="https://i.imgur.com/4YowWk5.png" alt="Facebook"></a>
-                <a href="#"><img src="https://i.imgur.com/fep1D5O.png" alt="Twitter"></a>
-                <a href="#"><img src="https://i.imgur.com/6hH5M8K.png" alt="Instagram"></a>
+        <div class="container">
+            <div class="footer-content">
+                <h3>OUR PARTNERS</h3>
+                <img src="https://i.imgur.com/wJt1fy0.jpg" alt="Partners Logos">
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><img src="https://i.imgur.com/4YowWk5.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://i.imgur.com/fep1D5O.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://i.imgur.com/6hH5M8K.png" alt="Instagram"></a>
+                </div>
             </div>
         </div>
     </footer>
