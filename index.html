@@ -6,30 +6,36 @@
     <title>TBG Farms - Home</title>
     <style>
         :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #45a049;
-            --text-color: #333;
-            --light-text: #fff;
-            --dark-text: #000;
+            --color-1: #6F7332;
+            --color-2: #E55C4A;
+            --color-3: #F29130;
+            --color-4: #B09D27;
+            --color-5: #8C5125;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
         }
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
+            color: var(--color-1);
             margin: 0;
             padding: 0;
-            background-image: url('https://i.imgur.com/9uedZ2t.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: var(--light-gray);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         header {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 15px 50px;
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .logo {
             max-width: 120px;
@@ -45,86 +51,56 @@
             margin-left: 30px;
         }
         nav ul li a {
-            color: var(--text-color);
+            color: var(--color-1);
             text-decoration: none;
             font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
         nav ul li a:hover {
-            background-color: var(--primary-color);
-            color: var(--light-text);
+            color: var(--color-2);
         }
-        .section {
-            padding: 60px 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 20px 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .welcome-section {
+        .hero {
+            background-image: url('https://i.imgur.com/9uedZ2t.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: var(--light-text);
             padding: 100px 0;
         }
-        .welcome-section h1 {
+        .hero h1 {
             font-size: 3em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        .welcome-section p {
+        .hero p {
             font-size: 1.2em;
             max-width: 800px;
             margin: 0 auto;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        .about-section {
-            background-color: rgba(255, 255, 255, 0.9);
+        .services {
+            padding: 60px 0;
+            background-color: var(--white);
         }
-        .about-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .about-text {
-            flex: 1;
-            padding-right: 40px;
-        }
-        .about-image {
-            flex: 1;
+        .services h2 {
             text-align: center;
-        }
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .services-section h2 {
-            text-align: center;
-            color: var(--primary-color);
+            color: var(--color-3);
             margin-bottom: 40px;
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
         .service-item {
-            text-align: center;
-            background-color: white;
+            background-color: var(--light-gray);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
         .service-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
         .service-item img {
             max-width: 100%;
@@ -133,85 +109,87 @@
             margin-bottom: 15px;
         }
         .service-item h3 {
-            color: var(--primary-color);
-            margin-top: 15px;
+            color: var(--color-5);
         }
         footer {
-            background-color: rgba(51, 51, 51, 0.9);
-            color: var(--light-text);
-            text-align: center;
-            padding: 30px 0;
+            background-color: var(--color-1);
+            color: var(--white);
+            padding: 40px 0;
         }
         .footer-content {
-            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
         }
-        .social-links img {
-            width: 30px;
-            margin: 0 10px;
-            transition: opacity 0.3s ease;
+        .footer-section h3 {
+            color: var(--color-3);
+            margin-bottom: 20px;
         }
-        .social-links img:hover {
-            opacity: 0.8;
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5em;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: var(--color-3);
+        }
+        .newsletter-form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .newsletter-form button {
+            background-color: var(--color-2);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .newsletter-form button:hover {
+            background-color: var(--color-3);
         }
         @media (max-width: 768px) {
-            header {
+            .header-content {
                 flex-direction: column;
-                padding: 20px;
-            }
-            .logo {
-                margin-bottom: 20px;
             }
             nav ul {
-                flex-direction: column;
-                align-items: center;
+                margin-top: 20px;
             }
             nav ul li {
-                margin: 10px 0;
-            }
-            .about-content {
-                flex-direction: column;
-            }
-            .about-text {
-                padding-right: 0;
-                margin-bottom: 30px;
+                margin: 0 10px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img class="logo" src="https://i.imgur.com/EnHrfAU.png" alt="TBG Farms Logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="our_story.html">OUR STORY</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="farmer_registration.html">FARMER REGISTRATION</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+        <div class="container header-content">
+            <img class="logo" src="https://i.imgur.com/EnHrfAU.png" alt="TBG Farms Logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="our_story.html">OUR STORY</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="farmer_registration.html">FARMER REGISTRATION</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="welcome-section">
+    <section class="hero">
         <div class="container">
             <h1>WELCOME TO TBG FARMS</h1>
             <p>TBG Farms stands at the forefront of agricultural innovation as a mixed livestock enterprise with a heart for social change. We offer a vision for sustainable farming and community empowerment in Liberia.</p>
         </div>
     </section>
 
-    <section class="about-section section">
-        <div class="container about-content">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>Specializing in the breeding and husbandry of pigs and poultry, TBG Farms is committed to transforming Liberia's agriculture through sustainable practices and innovative solutions. We support smallholder farmers by providing training, resources, and products that enhance productivity and sustainability.</p>
-            </div>
-            <div class="about-image">
-                <img src="https://i.imgur.com/acq9F58.png" alt="TBG Farms">
-            </div>
-        </div>
-    </section>
-
-    <section class="services-section section">
+    <section class="services">
         <div class="container">
             <h2>Our Products and Services</h2>
             <div class="services-grid">
@@ -236,18 +214,34 @@
     </section>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3>OUR PARTNERS</h3>
-                <img src="https://i.imgur.com/wJt1fy0.jpg" alt="Partners Logos">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>About TBG Farms</h3>
+                <p>TBG Farms is committed to transforming Liberia's agriculture through sustainable practices and innovative solutions.</p>
             </div>
-            <div class="footer-content">
-                <h3>Follow Us</h3>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
                 <div class="social-links">
-                    <a href="#"><img src="https://i.imgur.com/4YowWk5.png" alt="Facebook"></a>
-                    <a href="#"><img src="https://i.imgur.com/fep1D5O.png" alt="Twitter"></a>
-                    <a href="#"><img src="https://i.imgur.com/6hH5M8K.png" alt="Instagram"></a>
+                    <a href="#" aria-label="Facebook">&#xf09a;</a>
+                    <a href="#" aria-label="Twitter">&#xf099;</a>
+                    <a href="#" aria-label="Instagram">&#xf16d;</a>
+                    <a href="#" aria-label="LinkedIn">&#xf0e1;</a>
                 </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
     </footer>
